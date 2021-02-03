@@ -2,10 +2,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../css/style.css';
 
 import UI from './config/ui.config';
+//* Impotr Функций
 import { validate } from './helpers/validate';
 import { showInputErr, removeInputErr } from './views/form';
 import { login } from './services/auth.services';
 import { notify, closeNotify } from './views/notyfications';
+import { getNews } from './services/news.services';
+
 
 const { form, inputEmail, inputPassword } = UI;
 const inputs = [inputEmail, inputPassword];
@@ -32,6 +35,7 @@ async function onSubmit() {
   try {
     // show success notify
     await login(inputEmail.value, inputPassword.value);
+    await getNews();
     form.reset();
     notify({ msg: 'Login success', className: 'alert-success' });
 
