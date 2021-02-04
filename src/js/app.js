@@ -1,6 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import '../css/style.css';
 
+
+
 import UI from './config/ui.config';
 //* Impotr Функций
 import { validate } from './helpers/validate';
