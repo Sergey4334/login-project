@@ -1,5 +1,7 @@
-function notifyContainer() { 
- return document.querySelector('.notify-container');
+/* eslint-disable no-use-before-define */
+/* eslint-disable indent */
+function notifyContainer() {
+  return document.querySelector('.notify-container');
 }
 
 function notifyContainerTemplate() {
@@ -27,12 +29,12 @@ function getAlertIndex() {
 
 /**
  * Function notify. Show notifycation message.
- * @param {Object} settings 
- * @param {String} settings.msg 
+ * @param {Object} settings
+ * @param {String} settings.msg
  * @param {String} settings.className
  * @param {Number} settings.timeout
  */
-export function notify({ msg = 'Info message', className = 'alert-info', timeout = 2000 } = {}) { 
+export function notify({ msg = 'Info message', className = 'alert-info', timeout = 2000 } = {}) {
   if (!notifyContainer()) {
     createNotifyContainer();
   }
@@ -43,7 +45,6 @@ export function notify({ msg = 'Info message', className = 'alert-info', timeout
 
   setTimeout(() => closeNotify(index), timeout);
 }
-
 
 export function closeNotify(index) {
   let alert;

@@ -1,6 +1,5 @@
-
 function inputErrorTemplate(msg) {
-  return `
+	return `
   <div class="invalid-feedback">${msg}</div>
   `;
 }
@@ -11,11 +10,11 @@ function inputErrorTemplate(msg) {
  */
 
 export function showInputErr(el) {
-  const parent = el.parentElement;
-  const msg = el.dataset.invalidMessage || 'Invalid input';
-  const template = inputErrorTemplate(msg);
-  el.classList.add('is-invalid');
-  parent.insertAdjacentHTML('beforeend', template);
+	const parent = el.parentElement;
+	const msg = el.dataset.invalidMessage || 'Invalid input';
+	const template = inputErrorTemplate(msg);
+	el.classList.add('is-invalid');
+	parent.insertAdjacentHTML('beforeend', template);
 }
 
 /**
@@ -24,9 +23,9 @@ export function showInputErr(el) {
  */
 
 export function removeInputErr(el) {
-  const parent = el.parentElement;
-  const err = parent.querySelector('.invalid-feedback');
-  if (!err) return;
-  el.classList.remove('is-invalid');
-  parent.removeChild(err);
+	const parent = el.parentElement;
+	const err = parent.querySelector('.invalid-feedback');
+	if (!err) return;
+	el.classList.remove('is-invalid');
+	parent.removeChild(err);
 }
